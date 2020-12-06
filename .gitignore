@@ -1,0 +1,6 @@
+# Items to ignore from python projects
+__pycache__
+venv
+
+# Items to ignore from jetbrains IDEs
+.idea

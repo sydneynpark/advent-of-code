@@ -1,5 +1,3 @@
-import copy
-
 
 OCCUPIED_SEAT = '#'
 EMPTY_SEAT = 'L'
@@ -14,6 +12,9 @@ def print_map(seating_chart):
         for row in seating_chart:
             print(''.join(row))
         print()
+
+
+# region Part 1
 
 
 def count_neighbors(seating_chart, coords):
@@ -79,7 +80,7 @@ def step(seating_chart):
     return new_map, changed
 
 
-def run_simulation(starting_map):
+def part_1(starting_map):
 
     current_map = starting_map
     how_many_rounds = 0
@@ -99,6 +100,21 @@ def run_simulation(starting_map):
     return occupied_seats
 
 
+# endregion Part 1
+
+
+# region Part 2
+
+
+
+
+def part_2(starting_map):
+    pass
+
+# endregion Part 2
+
+
+
 def read_map(filepath):
     with open(filepath, 'r') as f:
         contents = f.read().splitlines()
@@ -112,5 +128,5 @@ def read_map(filepath):
 
 if __name__ == '__main__':
     initial_seating_chart = read_map('seating_system.txt')
-    final_seat_count = run_simulation(initial_seating_chart)
-    print(final_seat_count)
+    part_1_ans = part_1(initial_seating_chart)
+    print(part_1_ans)
